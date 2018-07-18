@@ -11,9 +11,11 @@ public class ClickHandler {
 
     private WebDriver driver;
 
+
     public ClickHandler(WebDriver driver) {
         this.driver = driver;
     }
+
 
     public void leftClick(WebElement element) {
         element.click();

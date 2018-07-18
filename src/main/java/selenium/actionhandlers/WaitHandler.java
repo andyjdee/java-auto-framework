@@ -1,7 +1,11 @@
 package selenium.actionhandlers;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 /**
  * Created by Andrew Demetriou on 18/07/2018.
@@ -14,7 +18,20 @@ public class WaitHandler {
         this.driver = driver;
     }
 
-    public void waitForSomething(WebElement element) {
-        //TODO: Complete the wait for method.
+    public void waitForSomething() {
+        //TODO: This method is not complete, requires a proper implementation.
+        waitFor(driver, d -> (Boolean)((JavascriptExecutor) driver)
+                .executeScript("return jQuery.active==0"), 10);
+    }
+
+    private static void waitFor(WebDriver driver, Function<WebDriver, Boolean> waitCondition, Integer timeoutInSeconds) {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, timeoutInSeconds);
+        webDriverWait.withTimeout(timeoutInSeconds, TimeUnit.SECONDS);
+
+        try{
+            webDriverWait.until(waitCondition);
+        } catch (RuntimeException e){
+            e.printStackTrace();
+        }
     }
 }

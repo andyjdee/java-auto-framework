@@ -10,7 +10,6 @@ public class KeyHandler {
 
     private WebDriver driver;
 
-
     public KeyHandler(WebDriver driver) {
         this.driver = driver;
     }
