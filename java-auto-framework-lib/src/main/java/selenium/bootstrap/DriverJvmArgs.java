@@ -10,7 +10,5 @@ public final class DriverJvmArgs {
     public static final String ENV_REMOTE_DRIVER_URL = "RemoteDriverUrl";
 
 
-    private DriverJvmArgs() {
-
-    }
+    private DriverJvmArgs() { }
 }

@@ -3,7 +3,9 @@ package common;
 /**
  * Created by Andrew Demetriou on 17/07/2018.
  */
-public class Utility {
+public final class Utility {
+
+    private Utility() { }
 
     public static boolean isInteger(String str) {
         if (str == null) {

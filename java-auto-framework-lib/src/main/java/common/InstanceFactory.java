@@ -9,9 +9,7 @@ public class InstanceFactory {
         T type = null;
         try {
             type = genericClass.newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
         return type;
