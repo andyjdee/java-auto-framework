@@ -1,13 +1,17 @@
-package selenium.openfin;
+package selenium.bootstrap.openfin;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import selenium.DriverFactory;
+import selenium.bootstrap.DriverFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import static selenium.bootstrap.DriverJvmArgs.ENV_EXEC_ARGS;
+import static selenium.bootstrap.DriverJvmArgs.ENV_EXEC_PATH;
+import static selenium.bootstrap.DriverJvmArgs.ENV_REMOTE_DRIVER_URL;
 
 /**
  * Created by Andrew Demetriou on 17/07/2018.

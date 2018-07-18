@@ -1,7 +1,9 @@
-package selenium;
+package selenium.bootstrap;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import static selenium.bootstrap.DriverJvmArgs.ENV_EXEC_PATH;
 
 /**
  * Created by Andrew Demetriou on 17/07/2018.

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
  */
 public class KeyHandler {
 
-    private static WebDriver driver;
+    private WebDriver driver;
 
 
     public KeyHandler(WebDriver driver) {

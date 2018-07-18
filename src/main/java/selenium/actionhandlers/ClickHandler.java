@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
  */
 public class ClickHandler {
 
-    private static WebDriver driver;
+    private WebDriver driver;
 
     public ClickHandler(WebDriver driver) {
         this.driver = driver;
