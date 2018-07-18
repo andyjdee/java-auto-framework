@@ -21,8 +21,6 @@ import java.util.List;
  */
 public class CucumberFixParser extends InstanceFactory {
 
-    private Utility utils = new Utility();
-
     public <T extends FieldMap> List<T> createFixSet(List<List<String>> dataTable, Class<T> subType) {
         List<T> fixSet = new ArrayList<>();
         List<String> headers = dataTable.get( 0 );
@@ -39,7 +37,7 @@ public class CucumberFixParser extends InstanceFactory {
         T fix = getInstanceOfGeneric( type );
         for (int i = 0; i < headers.size(); i++) {
             Field field;
-            if (utils.isInteger( headers.get( i ) )) {
+            if (Utility.isInteger( headers.get( i ) )) {
                 int tag = Integer.parseInt( headers.get( i ) );
                 field = new Field( tag, row.get( i ) );
                 fix.setField( tag, field );
@@ -62,7 +60,7 @@ public class CucumberFixParser extends InstanceFactory {
                     }
                     fix.setField( timeField );
                 } else {
-                    field = new Field( tag, ConvertFieldType( parameter.getType(), value ) );
+                    field = new Field( tag, convertFieldType( parameter.getType(), value ) );
                     fix.setField(tag, field);
                 }
             } catch (Exception e) {
@@ -72,7 +70,7 @@ public class CucumberFixParser extends InstanceFactory {
         return fix;
     }
 
-    private <T> T ConvertFieldType(Class<T> type, String value) throws Exception {
+    private <T> T convertFieldType(Class<T> type, String value) throws Exception {
         String typeName = type.getName();
         Object result = null;
 
